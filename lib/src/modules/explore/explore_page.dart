@@ -14,12 +14,12 @@ class ExplorePage extends StatelessWidget {
           SliverToBoxAdapter(
             child: Container(
               decoration: BoxDecoration(
-                color: Theme.of(context).cardColor.withOpacity(0.1),
+                color: Theme.of(context).cardColor,
                 borderRadius: BorderRadius.circular(
                   25,
                 ),
               ),
-              height: 600,
+              height: MediaQuery.of(context).size.height - 64 - 24,
             ),
           ),
         ],

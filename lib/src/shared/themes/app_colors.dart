@@ -13,7 +13,7 @@ class AppColors {
 }
 
 abstract class LightColors {
-  static const background = AppColors.white;
+  static const background = AppColors.twitchPurple;
   static const card = AppColors.quaseBranco;
   static const textLigth = AppColors.black;
   static const iconLight = AppColors.black;

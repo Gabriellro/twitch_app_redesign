@@ -11,27 +11,21 @@ class CustomSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      elevation: 0,
-      title: Text(
-        title,
+      title: const CircleAvatar(
+        backgroundColor: Colors.white,
       ),
       backgroundColor: Theme.of(context).backgroundColor,
-      toolbarHeight: 56 + 24,
+      toolbarHeight: 64,
+      pinned: true,
+      elevation: 0,
       actions: [
         IconButton(
           onPressed: () {},
-          icon: const Icon(
-            Icons.search_rounded,
-          ),
+          icon: const Icon(Icons.search_rounded),
         ),
-        Padding(
-          padding: const EdgeInsets.only(right: 16),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications_none_rounded,
-            ),
-          ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.notifications_none_rounded),
         ),
       ],
     );

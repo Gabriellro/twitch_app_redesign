@@ -33,6 +33,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.bottomCenter,
         children: [
           IndexedStack(
             index: controller.currentPage,
@@ -40,33 +42,34 @@ class _HomePageState extends State<HomePage> {
               ExplorePage(),
             ],
           ),
-        ],
-      ),
-      bottomNavigationBar: SnakeNavigationBar.color(
-        behaviour: snakeBarStyle,
-        snakeShape: snakeShape,
-        shape: bottomBarShape,
-        padding: padding,
-        snakeViewColor: AppColors.twitchPurple,
-        backgroundColor: AppColors.twitchPurple,
-        selectedItemColor: snakeShape == SnakeShape.indicator
-            ? AppColors.ausente
-            : AppColors.white,
-        unselectedItemColor: AppColors.white.withOpacity(0.3),
-        elevation: 0,
-        showUnselectedLabels: showUnselectedLabels,
-        showSelectedLabels: showSelectedLabels,
-        currentIndex: controller.currentPage,
-        onTap: (index) => setState(() => controller.currentPage = index),
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.explore_rounded), label: 'tickets'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_outline_rounded), label: 'calendar'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.mail_outline_rounded), label: 'home'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.live_tv_rounded), label: 'search')
+          SnakeNavigationBar.color(
+            behaviour: snakeBarStyle,
+            snakeShape: snakeShape,
+            shape: bottomBarShape,
+            padding: padding,
+            snakeViewColor: AppColors.twitchPurple,
+            backgroundColor: AppColors.twitchPurple,
+            selectedItemColor: snakeShape == SnakeShape.indicator
+                ? AppColors.ausente
+                : AppColors.white,
+            unselectedItemColor: AppColors.white.withOpacity(0.3),
+            elevation: 0,
+            showUnselectedLabels: showUnselectedLabels,
+            showSelectedLabels: showSelectedLabels,
+            currentIndex: controller.currentPage,
+            onTap: (index) => setState(() => controller.currentPage = index),
+            items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.explore_rounded), label: 'tickets'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.favorite_outline_rounded),
+                  label: 'calendar'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.mail_outline_rounded), label: 'home'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.live_tv_rounded), label: 'search')
+            ],
+          ),
         ],
       ),
     );
